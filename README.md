@@ -1,6 +1,6 @@
 # Real Estate Investment Decision Support System
 
-A data-driven analysis project that identifies promising real estate investment areas in Indiana&Ohio using housing price, rental income, and demographic data. My goal is to extend all the states of U.S.
+A data-driven analysis project that identifies promising real estate investment areas in Indiana&Ohio using housing price, rental income, and demographic data. My goal is to expand this model to all U.S. states.
 
 This project combines **Python data analysis** and **Tableau visualization** to explore investment opportunities and build an interactive investment map.
 
