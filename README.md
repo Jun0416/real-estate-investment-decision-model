@@ -1,6 +1,6 @@
 # Real Estate Investment Decision Support System
 
-A data-driven analysis project that identifies promising real estate investment areas in Indiana using housing price, rental income, and demographic data.
+A data-driven analysis project that identifies promising real estate investment areas in Indiana&Ohio using housing price, rental income, and demographic data. My goal is to extend all the areas of U.S.
 
 This project combines **Python data analysis** and **Tableau visualization** to explore investment opportunities and build an interactive investment map.
 
@@ -8,7 +8,7 @@ This project combines **Python data analysis** and **Tableau visualization** to 
 
 Real estate investors often look for areas where rental income can generate strong returns relative to property prices. However, investment decisions should also consider factors such as mortgage costs and local economic conditions.
 
-This project analyzes housing price, rental market, and demographic data across ZIP codes in Indiana to identify potential real estate investment opportunities.
+This project analyzes housing price, rental market, and demographic data across ZIP codes in Indiana&Ohio to identify potential real estate investment opportunities.
 
 Key objectives of this project:
 
