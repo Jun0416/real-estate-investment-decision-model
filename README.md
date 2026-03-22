@@ -6,7 +6,7 @@
 
 ## Overview
 
-This project analyzes zip-code-level real estate data across all 50 U.S. states to generate a composite **Investment Score**. The score integrates rental yield, income demographics, and property price to help investors identify zip codes with strong return potential relative to risk.
+This project analyzes zip-code-level real estate data across all U.S. states to generate a composite **Investment Score**. The score integrates rental yield, income demographics, and property price to help investors identify zip codes with strong return potential relative to risk.
 
 ---
 
