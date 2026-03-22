@@ -21,4 +21,4 @@ Key objectives of this project:
 
 View the interactive Tableau dashboard:
 
-🔗[View the Dashboard](https://public.tableau.com/app/profile/junyong.seong/viz/IndianaRealEstate/1_1)
+🔗[View the Dashboard](https://public.tableau.com/app/profile/junyong.seong/viz/RealEstateInvestmentModel/1_1)
