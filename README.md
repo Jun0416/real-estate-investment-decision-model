@@ -1,21 +1,73 @@
-# Real Estate Investment Decision Support System
+# U.S. Real Estate Investment Score Model
 
-A data-driven analysis project that identifies promising real estate investment areas in Indiana using housing price, rental income, and demographic data.
+> A data-driven support model to identify high-potential residential real estate investment opportunities across all U.S. states using publicly available housing and economic data.
 
-This project combines **Python data analysis** and **Tableau visualization** to explore investment opportunities and build an interactive investment map.
+---
 
-## Project Overview
+## Overview
 
-Real estate investors often look for areas where rental income can generate strong returns relative to property prices. However, investment decisions should also consider factors such as mortgage costs and local economic conditions.
+This project analyzes zip-code-level real estate data across all 50 U.S. states to generate a composite **Investment Score**. The score integrates rental yield, income demographics, and property price to help investors identify zip codes with strong return potential relative to risk.
 
-This project analyzes housing price, rental market, and demographic data across ZIP codes in Indiana to identify potential real estate investment opportunities.
+---
 
-Key objectives of this project:
+## Business Insights
 
-- Estimate **Return on Investment (ROI)** using housing price and rental data  
-- Incorporate **mortgage interest costs** to estimate realistic investment returns  
-- Develop an **investment score model** to rank potential investment areas  
-- Visualize results using an **interactive Tableau dashboard**
+By combining ROI, income stability, and price accessibility into a single score, this model enables the following actionable conclusions:
+
+- **High-ROI zip codes are not always the best investment** — areas with low median income may signal tenant instability or high vacancy risk. The model accounts for this by incorporating income as a positive weight.
+- **After adjusting for mortgage interest costs (6.5% rate)**, many nominally high-ROI markets show negative cash flow, revealing hidden risk not visible from gross yield alone.
+- **Lower-priced markets with strong rental income and solid median incomes** consistently rank highest — pointing to secondary cities and suburban markets as overlooked opportunities.
+- Zip codes scoring above the **80th percentile** on the Investment Score represent the most favorable balance of yield, demand, and affordability.
+
+---
+
+## Data Sources
+
+| Dataset | Source | Description |
+|---|---|---|
+| Property Prices | Zillow (ZHVI) | Median home value by zip code |
+| Rental Rates | Zillow (ZORI) | Median rent by zip code |
+| Median Household Income | U.S. Census Bureau (ACS) | B19013 variable, zip-level income |
+| Mortgage Rate | Assumed (Fixed) | 6.5% annual rate applied uniformly |
+
+---
+
+## Methodology
+
+For each zip code, the following metrics were calculated and standardized using z-scores before combining into a final Investment Score:
+
+| Metric | Formula | Weight |
+|---|---|---|
+| Gross ROI | (Annual Rent / Property Price) × 100 | — |
+| Annual Mortgage Interest | Property Price × 6.5% | — |
+| Cash Flow | Annual Rent − Annual Mortgage Interest | — |
+| ROI After Interest | Cash Flow / Property Price | +0.5 |
+| Median Income | From Census ACS B19013 | +0.3 |
+| Property Price | From Zillow ZHVI | −0.2 |
+
+---
+
+## Investment Score Formula
+
+```
+Investment Score = (0.5 × z_ROI_after_interest) + (0.3 × z_median_income) − (0.2 × z_price)
+```
+
+Where each variable is standardized as:
+```
+z(x) = (x − mean) / std
+```
+
+A higher Investment Score indicates a zip code with strong rental returns after financing costs, stable income demographics, and relatively affordable property prices — representing the most attractive conditions for residential real estate investment.
+
+---
+
+## Tools & Technologies
+
+- **Python (Pandas)** — data cleaning, merging, and score calculation
+- **Jupyter Notebook** — exploratory analysis and modeling
+- **Tableau** — interactive zip-code-level visualization across all states
+
   
 ## Interactive Dashboard
 
